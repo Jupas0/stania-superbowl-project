@@ -1,6 +1,11 @@
 package ext.stania.data;
 
+import jakarta.persistence.Basic;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,5 +21,23 @@ import lombok.Setter;
 @Entity
 @Table(name = "Bet")
 public class Pari {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int id;
 	
+	@Basic(optional = false)
+	@Column(name = "AMOUNT")
+	int amount;
+	
+	@Basic(optional = false)
+	@Column(name = "TEAMID")
+	int teamId;
+	
+	@Basic(optional = false)
+	@Column(name = "USERID")
+	int userId;
+	
+	@Basic(optional = false)
+	@Column(name = "MATCHID")
+	int matchId;
 }
