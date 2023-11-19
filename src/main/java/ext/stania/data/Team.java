@@ -16,6 +16,7 @@ public class Team {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
+	
 	@Basic(optional = false)
 	@Column(name = "name")
 	private String name;
@@ -24,9 +25,4 @@ public class Team {
 	@Column(name = "score")
 	private int score;
 	
-	@Basic
-	@Column(name = "rank")
-	private int rank;
-
-
 }

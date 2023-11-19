@@ -1,5 +1,4 @@
 package ext.stania.data;
-
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,22 +18,19 @@ import lombok.Setter;
 @Setter
 @Builder
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "Player")
+public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	@Basic(optional = false)
-	@Column(name = "USERNAME")
-	String userName;
+	@Column(name = "NUMBER")
+	int number;
 	@Basic(optional = false)
-	@Column(name = "SALT")
-	String salt;
+	@Column(name = "NAME")
+	String name;
 	@Basic(optional = false)
-	@Column(name = "STATUS")
-	String status;
-	@Basic(optional = false)
-	@Column(name = "HASHED")
-	String hashPass;
-
+	@Column(name = "TEAMID")
+	int teamId;
+	
 }

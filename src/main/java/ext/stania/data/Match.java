@@ -1,5 +1,8 @@
 package ext.stania.data;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import jakarta.persistence.Basic;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -19,22 +22,34 @@ import lombok.Setter;
 @Setter
 @Builder
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "Match")
+public class Match {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	@Basic(optional = false)
-	@Column(name = "USERNAME")
-	String userName;
-	@Basic(optional = false)
-	@Column(name = "SALT")
-	String salt;
-	@Basic(optional = false)
 	@Column(name = "STATUS")
 	String status;
 	@Basic(optional = false)
-	@Column(name = "HASHED")
-	String hashPass;
-
+	@Column(name = "TEAMAID")
+	int teamAId;
+	@Basic(optional = false)
+	@Column(name = "TEAMBID")
+	int teamBId;
+	@Basic(optional = false)
+	@Column(name = "TEAMASCORE")
+	int teamAScore;
+	@Basic(optional = false)
+	@Column(name = "TEAMBSCORE")
+	int teamBScore;
+	@Basic(optional = false)
+	@Column(name = "DATEMTACH")
+	LocalDate dateMatch;
+	@Basic(optional = false)
+	@Column(name = "STARTTIME")
+	LocalTime startTime;
+	@Basic(optional = false)
+	@Column(name = "ENDTIME")
+	LocalTime endTime;
+	
 }
